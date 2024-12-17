@@ -9,12 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #333;
+            background-color: #c8c8cc;
+            color: #000000;
             line-height: 1.6;
         }
         header {
-            background: linear-gradient(to right, #8b0000, #1b003e);
+            background: linear-gradient(to right, #626263, #000000);
             color: white;
             padding: 20px;
             text-align: center;
@@ -60,7 +60,7 @@
         }
         .sidebar {
             width: 300px;
-            background: linear-gradient(to bottom, #8b0000, #1b003e);
+            background: linear-gradient(to bottom, #626263, #000000);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 6px #19184d;
@@ -73,8 +73,8 @@
             border-bottom: 2px solid #d4af37;
             display: inline-block;
             margin-bottom: 10px;
-            font-size: 1.5em;
-            color: #1b003e;
+            font-size: 2.5em;
+            color: #000000;
         }
         .contact-list, .experience-list {
             list-style: none;
@@ -85,6 +85,7 @@
         }
         .about-text, .experience-text {
             text-align: justify;
+            font-size: 1.3em;
         }
         .image {
             margin-bottom: 15px;
@@ -93,7 +94,7 @@
             margin-right: 20px;
         }
         .image img {
-            max-width: 150px;
+            max-width: 320px;
             height: auto;
             border: 2px solid #19184d;
             border-radius: 10px;
@@ -134,13 +135,6 @@
             border: 2px solid #d4af37;
             border-radius: 10px;
         }
-        footer {
-        text-align: center;
-        margin-top: 20px;
-        padding: 10px 0;
-        background: linear-gradient(to right, #8b0000, #1b003e);
-        color: white;
-        }
         .close {
             position: absolute;
             top: 10px;
@@ -150,6 +144,39 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        /* Hidden sections */
+        .hidden {
+            display: none;
+        }
+
+        /* Certificates Section Styling */
+        #certificates .experience-text {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        #certificates .text-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 20px; /* Adjusted spacing between image and text */
+            margin-bottom: 20px;
+        }
+
+        #certificates .image {
+            margin: 0;
+        }
+
+        #certificates .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Adjusted spacing between certificate items */
+            padding: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -158,9 +185,9 @@
     <h1>Abdulaziz A N Alsousi</h1>
     <h2>Student Number: 030721145</h2>
     <nav>
-        <a href="#about-me">About Me</a>
-        <a href="#certificates">certificates</a>
-        <a href="#contact">Contact</a>
+        <a href="#about-me" onclick="showSection('about-me')">About Me</a>
+        <a href="#certificates" onclick="showSection('certificates')">Certificates</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
     </nav>
 </header>
 
@@ -175,25 +202,25 @@
                     <img src="IMG_2033.JPG" alt="About Me Photo" onclick="openModal('IMG_2033.JPG')">
                 </div>
                 <p class="about-text">
-                    I am a Sofware Engineering student at Istanbul Sabahattin Zaim University.
-                    I am interested in web development and programming.I am a hardworking and dedicated individual who is always looking to learn new things.
+                    I am a Software Engineering student at Istanbul Sabahattin Zaim University.
+                    I am interested in web development and programming. I am a hardworking and dedicated individual who is always looking to learn new things.
                     I have many certificates in programming and languages, such as Turkish language certificate, 
-                    Python programming certificate and intruduction to Artificial intelligence certificate.
+                    Python programming certificate, and introduction to Artificial Intelligence certificate.
                 </p>
             </div>
         </div>
 
-        <!-- certificates Section -->
-        <div class="section" id="certificates">
-            <h3>certificates</h3>
+        <!-- Certificates Section -->
+        <div class="section hidden" id="certificates">
+            <h3>Certificates</h3>
             <ul class="experience-list">
                 <li>
                     <div class="text-container">
                         <div class="image">
-                            <img src="ABDULAZIZ A N ALSOUSI_page-0001.jpg" alt="Experience 1 Photo" onclick="openModal('ABDULAZIZ A N ALSOUSI_page-0001.jpg')">
+                            <img src="ABDULAZIZ A N ALSOUSI_page-0001.jpg" alt="Turkish Language Certificate" onclick="openModal('ABDULAZIZ A N ALSOUSI_page-0001.jpg')">
                         </div>
                         <p class="experience-text">
-                            <strong>Turkish Language certificate</strong><br>
+                            <strong>Turkish Language Certificate</strong><br>
                             I have a B2 Turkish language certificate from Gedik University.
                         </p>
                     </div>
@@ -201,24 +228,22 @@
                 <li>
                     <div class="text-container">
                         <div class="image">
-                            <img src="issue_certificate-6_page-0001.jpg" alt="Experience 2 Photo" onclick="openModal('issue_certificate-6_page-0001.jpg')">
+                            <img src="issue_certificate-6_page-0001.jpg" alt="AI Certificate" onclick="openModal('issue_certificate-6_page-0001.jpg')">
                         </div>
                         <p class="experience-text">
                             <strong>Artificial Intelligence Certificate</strong><br>
-                            </strong><br>
-                            I took this in 2021 certificate since the covid-19 pandemic started from Edraak.org 
-                            since I was interested in AI. Since then I have been learning more about AI and programming at University.
+                            I was awarded this in 2021 from Edraak.org during the COVID-19 pandemic in AI and programming.
                         </p>
                     </div>
                 </li>
                 <li>
                     <div class="text-container">
                         <div class="image">
-                            <img src="Abdulaziz A N Alsousi - Python.png" alt="Experience 3 Photo" onclick="openModal('Abdulaziz A N Alsousi - Python.png')">
+                            <img src="Abdulaziz A N Alsousi - Python.png" alt="Python Certificate" onclick="openModal('Abdulaziz A N Alsousi - Python.png')">
                         </div>
                         <p class="experience-text">
-                            <strong>Paythin Certificate</strong><br>
-                            Prof. Ahmed Kaplan gave me this certificate in 2023 after I finished the course. 
+                            <strong>Python Certificate</strong><br>
+                            During my first year in university, I was awarded a Python certificate with Prof. Ahmed Kaplan.
                         </p>
                     </div>
                 </li>
@@ -226,11 +251,10 @@
         </div>
 
         <!-- Contact Section -->
-        <div class="section" id="contact">
+        <div class="section hidden" id="contact">
             <h3>Contact</h3>
             <ul class="contact-list">
                 <li><strong>Email:</strong> 030721145@std.izu.edu.tr</li>
-                <li><strong>Email:</strong> ssousi326@gmail.com</li>
                 <li><strong>Phone:</strong> +90 551 798 25 41</li>
                 <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abdulaziz-a-n-alsousi-801991271/"
                 style="color: #8b0000;" target="_blank">LinkedIn Profile</a></li>
@@ -242,17 +266,19 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <h3>Skills</h3>
+        <h3>Programming Skills</h3>
         <ul>
             <li>HTML Programming</li>
             <li>Web Development</li>
-            <li>Comunication</li>
+            <li>Java Programming</li>
+            <li>C++ Programming</li>
+            <li>Database</li>
         </ul>
 
         <h3>Experiences</h3>
         <ul>
-            <li>I worked to OLC firm  as A Opration Maneger (2023 - 2024)</li>
-            <li>I had worked as a call center agent in 2021 at UAE in the company called "Etisalat" for 6 months.</li>
+            <li>Operation Manager (2023 - 2024)</li>
+            <li>Call Center Agent at Etisalat UAE (2021)</li>
         </ul>
 
         <h3>Languages</h3>
@@ -260,7 +286,7 @@
             <li>Arabic - Native</li>
             <li>English - Fluent</li>
             <li>Turkish - Intermediate</li>
-            <li>spanish - Beginner</li>
+            <li>Spanish - Beginner</li>
         </ul>
     </div>
 </div>
@@ -268,28 +294,37 @@
 <!-- Modal for Image Viewing -->
 <div id="myModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="img01">
+    <img class="modal-content" id="modal-image">
 </div>
 
-<footer>
-    <p>&copy; 2024 Abdulaziz A N Alsousi. All rights reserved. </p>
-</footer>
-
 <script>
-// Open the Modal
-function openModal(imageSrc) {
-    var modal = document.getElementById('myModal');
-    var modalImg = document.getElementById('img01');
-    modal.style.display = "flex";
-    modalImg.src = imageSrc;
-}
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    }
 
-// Close the Modal
-function closeModal() {
-    var modal = document.getElementById('myModal');
-    modal.style.display = "none";
-}
+    function openModal(imageSrc) {
+        const modal = document.getElementById('myModal');
+        const modalImage = document.getElementById('modal-image');
+        modal.style.display = 'flex';
+        modalImage.src = imageSrc;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+    }
 </script>
+
+<footer>
+    <p>&copy; 2024 Abdulaziz A N Alsousi. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
